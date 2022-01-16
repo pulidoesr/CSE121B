@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Arrays</h1>
+<h2>The concat() Method</h2>
+
+<p>The concat() method concatenates (joins) two or more arrays:</p>
+
+<p id="demo"></p>
+
+<script>
+let names = ["Bob", "Sue", "Jorge", "Svetlana"];
+let aName = names[0];
+names[2] = "George";
+names.push("Grace");
+console.log(names);
+//Displays ['Bob','Sue','George','Svetlana','Grace']
+
+//Displays ['Bob','Sue','George','Svetlana']
+// names.pop();
+// console.log(names);
+const arr1 = ["Cecilie", "Lone"];
+const arr2 = ["Emil", "Tobias", "Linus"];
+const arr3 = ["Robin"];
+
+const children = arr1.concat(arr2,arr3); 
+document.getElementById("demo").innerHTML = children;
+
+// These would also be true with a double equals
+3 === 3.0; // true
+"yes" === "yes"; // true
+null === null; // true
+false === false; // true
+
+// array example
+var a = [1, 2, 3];
+console.log(a);
+
+// assignment is by reference-copy, so
+// y references the *same* array as x,
+// not another copy of it.
+var b = a;
+var c = 0;
+console.log(b);
+
+let myString = "This is my String!";
+c = myString.length; // 18
+console.log(c);
+
+const hello = "Hello";
+const world = "World";
+const complexString = `${hello} ${world}`;
+console.log(complexString);
+
+</script>
+
+</body>
+</html>

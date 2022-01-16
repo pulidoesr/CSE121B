@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Operators</h2>
+
+<h3>Multiple Operators</h3>
+
+<p>y = 5, calculate x = --y:</p>
+<p>y = 5, calculate m = y - 2:</p>
+<p>y = 5, calculate n = y * 2:</p>
+<p>y = 5, calculate l = y / 2:</p>
+<p>y = 5, calculate z = y % 2:</p>
+<p>y = 5, calculate w = ++y:</p>
+<p>y = 5, calculate u = --y:</p>
+<p>string1 = 'Hello'
+   string2 = 'World'
+   message = string1 + string2</p>
+<p>
+   <label for="age">Enter your Age</label>
+   <input id="age" />
+</p>   
+<p>Assign 5 to k, and display the value of the comparison (k == 8):</p>
+<p>Assign 5 to o, and display the value of the comparison (o === 5):</p>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+<p id="demo6"></p>
+<p id="demo7"></p>
+<p id="demo8"></p>
+<p id="demo9"></p>
+<p id="age"></p>
+<p id="demo10"></p>
+<p id="demo11"></p>
+
+<p><strong>Note:</strong> Both variables, y and x, are affected.</p>
+
+<script>
+let y = 5;
+let x = --y;
+let m = y - 2;
+let n = y * 2;
+let l = y / 2;
+let z = y % 2;
+let w = ++y;
+let u = --y;
+let string1 = 'Hello'
+let string2 = 'Wolrd'
+let message = string1 + string2
+// get age from input
+const age = document.getElementById("age").value; 
+   // assume 21 was entered
+   // add 10 years
+const agePlus10 = age + 10;
+console.log(age);
+console.log(agePlus10); 
+   // would give something like 2110 (21 + 10)
+let k = 5;
+let o = 5;
+document.getElementById("demo1").innerHTML = y;
+document.getElementById("demo2").innerHTML = x;
+document.getElementById("demo3").innerHTML = m;
+document.getElementById("demo4").innerHTML = n;
+document.getElementById("demo5").innerHTML = l;
+document.getElementById("demo6").innerHTML = z;
+document.getElementById("demo7").innerHTML = w;
+document.getElementById("demo8").innerHTML = u;
+document.getElementById("demo9").innerHTML = message;
+document.getElementById("age").innerHTML = age;
+document.getElementById("demo10").innerHTML = (k == 8);
+document.getElementById("demo11").innerHTML = (o === 5);
+
+let names = ["Bob", "Sue", "Jorge", "Svetlana"];
+let aName = names[0];
+names[2] = "George";
+names.push("Grace");
+console.log(names);
+//Displays ['Bob','Sue','George','Svetlana','Grace']
+
+//Displays ['Bob','Sue','George','Svetlana']
+// names.pop();
+// console.log(names);
+const arr1 = ["Cecilie", "Lone"];
+const arr2 = ["Emil", "Tobias", "Linus"];
+const arr3 = ["Robin"];
+
+const children = arr1.concat(arr2,arr3); 
+document.getElementById("demo").innerHTML = children;
+
+// These would also be true with a double equals
+3 === 3.0; // true
+"yes" === "yes"; // true
+null === null; // true
+false === false; // true
+
+// array example
+var a = [1, 2, 3];
+console.log(a);
+
+// assignment is by reference-copy, so
+// y references the *same* array as x,
+// not another copy of it.
+var b = a;
+var c = 0;
+console.log(b);
+
+let myString = "This is my String!";
+c = myString.length; // 18
+console.log(c);
+
+const hello = "Hello";
+const world = "World";
+const complexString = `${hello} ${world}`;
+console.log(complexString);
+
+</script>
+
+</body>
+</html>
