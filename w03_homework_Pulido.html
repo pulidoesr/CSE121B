@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Arrays</h1>
+<h2>The array Methods</h2>
+
+<p>W03 Practicing multiple methods, copying examples and see how they work</p>
+<p> Practice let and verify it doesn't allow me to define the same variable twice </p>
+<p> Check console to see all the output </p>
+
+<p id="demo"></p>
+
+<script>
+let names = ["Bob", "Sue", "Jorge", "Svetlana"];
+let aName = names[0];
+names[2] = "George";
+names.push("Grace");
+console.log(names);
+//Displays ['Bob','Sue','George','Svetlana','Grace']
+
+//Displays ['Bob','Sue','George','Svetlana']
+// names.pop();
+// console.log(names);
+const arr1 = ["Cecilie", "Lone"];
+const arr2 = ["Emil", "Tobias", "Linus"];
+const arr3 = ["Robin"];
+
+
+let fruits = ['Apple', 'Banana']
+
+console.log(fruits.length)
+// 2
+let first = fruits[0]
+// Apple
+
+let last = fruits[fruits.length - 1]
+// Banana
+fruits.forEach(function(item, index, array) {
+  console.log(item, index)
+})
+let newLength = fruits.push('Orange')
+// ["Apple", "Banana", "Orange"]
+// Apple 0
+// Banana 1
+fruits.forEach(function(item, index, array) {
+  console.log(item, index)
+})
+// Apple 0
+// Banana 1
+let last1 = fruits.pop() // remove Orange (from the end)
+// ["Apple", "Banana"]
+console.log(fruits)
+
+let removedItem = fruits.splice(0, 1) // this is how to remove an item
+
+// ["Strawberry", "Mango"]
+console.log(removedItem)
+
+let vegetables = ['Cabbage', 'Turnip', 'Radish', 'Carrot']
+console.log(vegetables)
+// ["Cabbage", "Turnip", "Radish", "Carrot"]
+
+let pos = 1
+let n = 2
+
+let removedItems = vegetables.splice(pos, n)
+// this is how to remove items, n defines the number of items to be removed,
+// starting at the index position specified by pos and progressing toward the end of array.
+
+console.log(vegetables)
+// ["Cabbage", "Carrot"] (the original array is changed)
+
+console.log(removedItems)
+// ["Turnip", "Radish"]
+
+let vegetables1 = ['Cabbage', 'Turnip', 'Radish', 'Carrot']
+console.log(vegetables)
+// ["Cabbage", "Turnip", "Radish", "Carrot"]
+
+let pos1 = 1
+let n1 = 2
+
+let removedItems1 = vegetables1.splice(pos1, n1)
+// this is how to remove items, n defines the number of items to be removed,
+// starting at the index position specified by pos and progressing toward the end of array.
+
+console.log(vegetables1)
+// ["Cabbage", "Carrot"] (the original array is changed)
+
+console.log(removedItems)
+// ["Turnip", "Radish"]
+
+let shallowCopySpread = [...fruits]
+// ["Strawberry", "Mango"]
+
+let arr = ['this is the first element', 'this is the second element', 'this is the last element']
+console.log(arr[0])              // logs 'this is the first element'
+console.log(arr[1])              // logs 'this is the second element'
+console.log(arr[arr.length - 1]) // logs 'this is the last element'
+
+function applyAndNew(constructor, args) {
+   function partial () {
+      return constructor.apply(this, args);
+   };
+   if (typeof constructor.prototype === "object") {
+      partial.prototype = Object.create(constructor.prototype);
+   }
+   return partial;
+}
+
+function myConstructor () {
+   console.log("arguments.length: " + arguments.length);
+   console.log(arguments);
+   this.prop1="val1";
+   this.prop2="val2";
+};
+
+let myArguments = ["hi", "how", "are", "you", "mr", null];
+let myConstructorWithArguments = applyAndNew(myConstructor, myArguments);
+
+console.log(new myConstructorWithArguments);
+//  (internal log of myConstructor):           arguments.length: 6
+//  (internal log of myConstructor):           ["hi", "how", "are", "you", "mr", null]
+//  (log of "new myConstructorWithArguments"): {prop1: "val1", prop2: "val2"}
+
+let board = [
+  ['R','N','B','Q','K','B','N','R'],
+  ['P','P','P','P','P','P','P','P'],
+  [' ',' ',' ',' ',' ',' ',' ',' '],
+  [' ',' ',' ',' ',' ',' ',' ',' '],
+  [' ',' ',' ',' ',' ',' ',' ',' '],
+  [' ',' ',' ',' ',' ',' ',' ',' '],
+  ['p','p','p','p','p','p','p','p'],
+  ['r','n','b','q','k','b','n','r'] ]
+
+console.log(board.join('\n') + '\n\n')
+
+// Move King's Pawn forward 2
+board[4][4] = board[6][4]
+board[6][4] = ' '
+console.log(board.join('\n'))
+
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+console.log(animals.slice(2));
+// expected output: Array ["camel", "duck", "elephant"]
+
+console.log(animals.slice(2, 4));
+// expected output: Array ["camel", "duck"]
+
+console.log(animals.slice(1, 5));
+// expected output: Array ["bison", "camel", "duck", "elephant"]
+
+console.log(animals.slice(-2));
+// expected output: Array ["duck", "elephant"]
+
+console.log(animals.slice(2, -1));
+// expected output: Array ["camel", "duck"]
+
+console.log(animals.slice());
+// expected output: Array ["ant", "bison", "camel", "duck", "elephant"]
+
+</script>
+
+</body>
+</html>
+
