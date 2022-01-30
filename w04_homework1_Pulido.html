@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Functions</h1>
+<h2>Practice</h2>
+
+<p>W04 copying examples and see how they work</p>
+<p> Javascript debugging </p>
+<p> using devtools </p>
+
+<p id="demo"></p>
+
+
+
+<script>
+  function map(f, a) {
+  let result = []; // Create a new Array
+  let i; // Declare variable
+  for (i = 0; i != a.length; i++)
+    result[i] = f(a[i]);
+  return result;
+}
+const f = function(x) {
+   return x * x * x;
+}
+let numbers = [0, 1, 2, 5, 10];
+let cube = map(f,numbers);
+console.log(cube);
+
+  function averagetwo(a) {
+    // Element i+1 no always exists (last element)
+  let averagetwo = [];
+  let average = 0
+  for (i =0; i != a.length; i++)
+   averagetwo [i] = averageTwoNumbers(a[i], a[i+1]);
+  return averagetwo;
+}
+let averagecalc = averagetwo(numbers);
+console.log(averagecalc);
+
+function averageTwoNumbers(firstNum, secondNum) {
+  return (firstNum + secondNum) / 2;
+}
+
+let averageTwoNum = function (firstNum, secondNum) {
+  let sum = firstNum + secondNum;
+  let avg = sum / 2;
+  return avg;
+};
+console.log(averageTwoNum(10,20));
+</script>
+
+</body>
+</html>
